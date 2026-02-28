@@ -8,5 +8,5 @@ jobs:
         run: |
           echo "Cloning the repository..."
           echo "Github context: ${{ toJson(github) }}"
-          git clone https://github.com/${{github.repository}}/gha-cicd-pipeline-demo.git myfolder
+          git clone https://github.com/${{github.repository}}.git myfolder
           cd myfolder && ls -la
