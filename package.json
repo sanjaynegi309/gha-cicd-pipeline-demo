@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage":"https://mukeshphulwani66.github.io/react-cidcd-demo-gitactions",
+  "homepage":"https://sanjaynegi309.github.io/gha-cicd-pipeline-demo",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
