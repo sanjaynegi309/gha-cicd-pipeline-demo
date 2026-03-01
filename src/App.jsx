@@ -1,5 +1,5 @@
 import './App.css'
-// this is app component
+// this is app component which is the main component of our react application
 function App() {
 
   return (
