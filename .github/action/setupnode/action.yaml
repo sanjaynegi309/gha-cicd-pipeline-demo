@@ -2,9 +2,7 @@ name: Setup Node js and instal its dependencies
 description: This action sets up Node.js and installs its dependencies.
 runs:
   using: "composite"
-  steps:
-    - name: Cloning repository
-      uses: actions/checkout@v6
+  steps:    
     - name: Setup Node.js
       uses: actions/setup-node@v6
       with:
