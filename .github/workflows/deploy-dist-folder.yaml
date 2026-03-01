@@ -18,3 +18,16 @@ jobs:
         run: npm test
       - name: Job is completed
         run: echo "Job is completed successfully!"
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cloning repository
+        uses: actions/checkout@v6
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+      - name: Install dependencies
+        run: npm install
+      - name: Build project
+        run: npm run build
