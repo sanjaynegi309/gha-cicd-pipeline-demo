@@ -11,38 +11,16 @@ jobs:
     steps:
       - name: Cloning repository
         uses: actions/checkout@v6
-      - name: Setup Node.js
-        uses: actions/setup-node@v6
-        with:
-          node-version: '22'          
-      - name: Cache node modules
-        uses: actions/cache@v3
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-      - name: Install dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: npm install
+      - name: Setup Node.js and install dependencies
+        uses: ./.github/action/setupnode
       - name: Run tests
         run: npm test      
   build:
     needs: test
     runs-on: ubuntu-latest
     steps:
-      - name: Cloning repository
-        uses: actions/checkout@v6
-      - name: Setup Node.js
-        uses: actions/setup-node@v6
-        with:
-          node-version: '22'
-      - name: Cache node modules
-        uses: actions/cache@v3
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-      - name: Install dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: npm install
+      - name: Setup Node.js and install dependencies
+        uses: ./.github/action/setupnode
       - name: Build project
         run: npm run build
   deploy:
