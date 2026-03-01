@@ -19,6 +19,8 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     steps:
+      - name: Cloning repository
+        uses: actions/checkout@v6
       - name: Setup Node.js and install dependencies
         uses: ./.github/action/setupnode
       - name: Build project
